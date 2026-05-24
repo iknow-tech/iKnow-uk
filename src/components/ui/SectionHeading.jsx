@@ -1,9 +1,8 @@
 import { cn } from '../../lib/utils';
+import { useInView } from '../../hooks/useInView';
 
 /**
- * Consistent section heading with optional subtitle.
- * Supports centered (default) and left alignment.
- * Use `light` prop for dark-background sections.
+ * Premium SectionHeading — scroll-reveal, gradient accent line, 3 alignment modes.
  */
 export default function SectionHeading({
   title,
@@ -13,39 +12,60 @@ export default function SectionHeading({
   light = false,
   className,
 }) {
+  const [ref, visible] = useInView({ threshold: 0.2 });
+
   return (
     <div
+      ref={ref}
       className={cn(
-        'mb-12 md:mb-16',
+        'mb-14 md:mb-20',
         align === 'center' && 'text-center',
+        align === 'left' && 'text-left',
+        align === 'right' && 'text-right',
+        'transition-all duration-700',
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6',
         className
       )}
     >
       {label && (
         <span
           className={cn(
-            'inline-block mb-3 px-4 py-1.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase',
+            'inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.15em] uppercase',
             light
-              ? 'bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20'
-              : 'bg-primary-50 text-primary-600 border border-primary-100'
+              ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
+              : 'bg-brand-500/10 text-brand-600 border border-brand-500/20'
           )}
         >
+          <span className={cn('w-1.5 h-1.5 rounded-full', light ? 'bg-cyan-400' : 'bg-brand-500')} />
           {label}
         </span>
       )}
+
       <h2
         className={cn(
-          'text-3xl md:text-4xl lg:text-5xl font-bold font-display leading-tight',
+          'font-display font-bold leading-[1.1] tracking-tight',
+          'text-3xl sm:text-4xl md:text-5xl',
           light ? 'text-white' : 'text-text'
         )}
       >
         {title}
       </h2>
+
+      {/* Gradient accent line */}
+      <div
+        className={cn(
+          'h-0.5 mt-5 rounded-full',
+          'bg-gradient-to-r from-brand-500 via-cyan-500 to-violet-500',
+          align === 'center' ? 'mx-auto w-16' : align === 'right' ? 'ml-auto w-16' : 'w-16',
+          'opacity-70'
+        )}
+      />
+
       {subtitle && (
         <p
           className={cn(
-            'mt-4 text-lg md:text-xl max-w-2xl leading-relaxed',
-            align === 'center' && 'mx-auto',
+            'mt-5 text-lg md:text-xl leading-relaxed',
+            align === 'center' && 'mx-auto max-w-2xl',
             light ? 'text-slate-400' : 'text-text-muted'
           )}
         >

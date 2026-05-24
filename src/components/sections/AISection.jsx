@@ -1,11 +1,12 @@
 import { Brain, Cpu, BarChart3, Zap, Shield, Globe } from 'lucide-react';
 import Card from '../ui/Card';
 import SectionHeading from '../ui/SectionHeading';
+import AnimatedCounter from '../ui/AnimatedCounter';
 
 /**
- * AI Section — arya.ai-inspired showcase.
- * Dark slate background with glowing grid, cyan accent borders,
- * capability cards, and stats bar.
+ * AI Section.
+ * Shows high-impact capability cards, interactive elements,
+ * platform core pillars, and animated statistic counters.
  */
 
 const aiCapabilities = [
@@ -13,47 +14,47 @@ const aiCapabilities = [
     icon: Brain,
     title: 'AI Decision Intelligence',
     description:
-      'Transform raw data into actionable decisions with our enterprise-grade AI models. Real-time inference at scale with explainable outcomes.',
+      'Transform raw corporate data into actionable decisions with explainable AI models. Execute real-time inference at scale with secure local hosting options.',
     stats: '99.7% Accuracy',
   },
   {
     icon: Cpu,
     title: 'Digital Workforce Automation',
     description:
-      'Deploy intelligent agents that automate complex workflows, from document processing to customer engagement — end to end.',
+      'Deploy autonomous agents capable of managing complex document processing pipelines, client interactions, and predictive analytics integrations.',
     stats: '10M+ Tasks/Day',
   },
   {
     icon: BarChart3,
     title: 'Predictive Analytics Engine',
     description:
-      'Forecast demand, detect anomalies, and uncover patterns hidden in your data. Purpose-built models for your industry.',
+      'Identify anomalies, forecast infrastructure demand, and discover hidden correlations inside petabyte-scale environments.',
     stats: '50ms Latency',
   },
 ];
 
 const platformFeatures = [
-  { icon: Zap, label: 'Real-Time Processing' },
-  { icon: Shield, label: 'Enterprise Security' },
-  { icon: Globe, label: 'Global Deployment' },
+  { icon: Zap, label: 'Real-Time Streaming Inference' },
+  { icon: Shield, label: 'Enterprise Security Compliance' },
+  { icon: Globe, label: 'Edge Network Deployments' },
 ];
 
 export default function AISection() {
   return (
-    <section className="relative bg-slate-950 py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-midnight py-24 md:py-32 overflow-hidden border-t border-dark-800/60">
       {/* Grid Overlay */}
-      <div className="absolute inset-0 grid-overlay" />
+      <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
 
-      {/* Subtle gradient accents */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent-cyan/5 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[200px] bg-primary-500/5 blur-[100px] rounded-full" />
+      {/* Glowing Accents */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[200px] bg-brand-500/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <SectionHeading
           label="Artificial Intelligence"
-          title="Intelligent Systems, Engineered for Enterprise"
-          subtitle="From decision automation to predictive analytics — our AI platform delivers measurable business impact at scale."
+          title="Intelligent Systems, Built for Enterprise Scaling"
+          subtitle="From autonomous process pipelines to predictive neural models, our solutions drive efficiency across the enterprise."
           light
         />
 
@@ -68,12 +69,12 @@ export default function AISection() {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Background gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div className="relative z-10">
-                {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-accent-cyan/10 border border-accent-cyan/20 flex items-center justify-center mb-5 group-hover:border-accent-cyan/40 transition-colors duration-300">
-                  <cap.icon size={24} className="text-accent-cyan" />
+                {/* Icon wrapper */}
+                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5 group-hover:border-cyan-500/40 group-hover:scale-105 transition-all duration-300">
+                  <cap.icon size={22} className="text-cyan-400" />
                 </div>
 
                 {/* Title */}
@@ -87,9 +88,9 @@ export default function AISection() {
                 </p>
 
                 {/* Stats badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-cyan/10 border border-accent-cyan/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" />
-                  <span className="text-xs font-medium text-accent-cyan">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <span className="text-xs font-semibold text-cyan-400">
                     {cap.stats}
                   </span>
                 </div>
@@ -99,29 +100,34 @@ export default function AISection() {
         </div>
 
         {/* Platform Feature Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 py-8 border-t border-b border-slate-800/50">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 py-8 border-t border-b border-dark-800/60 bg-dark-900/10 rounded-2xl">
           {platformFeatures.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3 text-slate-400">
-              <div className="w-10 h-10 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center justify-center">
-                <Icon size={18} className="text-primary-400" />
+            <div key={label} className="flex items-center gap-3 text-slate-300">
+              <div className="w-10 h-10 rounded-xl bg-dark-700/40 border border-dark-800 flex items-center justify-center shrink-0">
+                <Icon size={18} className="text-cyan-400" />
               </div>
-              <span className="text-sm font-medium">{label}</span>
+              <span className="text-sm font-semibold tracking-wide">{label}</span>
             </div>
           ))}
         </div>
 
-        {/* Bottom Stats Row */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+        {/* Bottom Stats Row with Animated Counters */}
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center bg-dark-900/30 rounded-2xl border border-dark-800/50 p-8">
           {[
-            { value: '99.7%', label: 'Model Accuracy' },
-            { value: '<50ms', label: 'Average Response Time' },
-            { value: '10M+', label: 'Decisions Processed Daily' },
+            { value: 99, prefix: '', suffix: '.7%', label: 'Model Accuracy' },
+            { value: 50, prefix: '<', suffix: 'ms', label: 'Average Response Time' },
+            { value: 10, prefix: '', suffix: 'M+', label: 'Daily Decisions Automated' },
           ].map((stat) => (
             <div key={stat.label}>
-              <div className="font-display font-bold text-3xl md:text-4xl gradient-text mb-2">
-                {stat.value}
+              <div className="mb-2">
+                <AnimatedCounter
+                  value={stat.value}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                  className="font-display font-black text-4xl md:text-5xl gradient-text"
+                />
               </div>
-              <div className="text-sm text-slate-500 uppercase tracking-wider">
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">
                 {stat.label}
               </div>
             </div>

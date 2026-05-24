@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { LinkedinIcon, TwitterIcon, GithubIcon } from '../ui/SocialIcons';
+import Button from '../ui/Button';
+import { cn } from '../../lib/utils';
+
 
 /**
- * Corporate Footer with 4-column grid layout.
- * Dark navy background matching the brand.
+ * Premium Corporate Footer.
+ * Features a newsletter email subscription box, deep midnight color system,
+ * gradient accents, and micro-animations.
  */
 
 const footerLinks = {
@@ -29,45 +34,111 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: LinkedinIcon, href: '#', label: 'LinkedIn' },
-  { icon: TwitterIcon, href: '#', label: 'Twitter / X' },
-  { icon: GithubIcon, href: '#', label: 'GitHub' },
+  { icon: LinkedinIcon, href: '#', label: 'LinkedIn', color: 'hover:text-cyan-400' },
+  { icon: TwitterIcon, href: '#', label: 'Twitter / X', color: 'hover:text-brand-400' },
+  { icon: GithubIcon, href: '#', label: 'GitHub', color: 'hover:text-violet-400' },
 ];
 
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+    setError('');
+    setSubscribed(true);
+    setEmail('');
+  };
+
   return (
-    <footer className="bg-slate-950 text-white">
+    <footer className="bg-midnight border-t border-dark-800/60 text-white relative overflow-hidden">
+      {/* Subtle Background Glows */}
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Top Banner: Newsletter */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-12 border-b border-dark-800/60">
+        <div className="relative rounded-2xl glass-dark border border-dark-800/80 p-8 md:p-12 overflow-hidden shadow-2xl">
+          {/* Subtle noise texture */}
+          <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
+          <div className="absolute -right-10 -top-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl" />
+
+          <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-7">
+              <h3 className="font-display font-bold text-2xl md:text-3xl text-white tracking-tight">
+                Stay updated with technology trends
+              </h3>
+              <p className="mt-3 text-slate-400 text-sm md:text-base leading-relaxed">
+                Join our newsletter and receive exclusive insights, tech digests, and early access to our software solutions.
+              </p>
+            </div>
+            <div className="md:col-span-5">
+              {subscribed ? (
+                <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-emerald-400">
+                  <CheckCircle2 size={20} className="shrink-0" />
+                  <span className="font-semibold text-sm">Successfully subscribed to newsletter!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="space-y-2">
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email address"
+                      className="flex-1 bg-dark-700/50 border border-dark-600/80 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/10 transition-all duration-300"
+                    />
+                    <Button variant="accent" size="sm" type="submit" className="px-5">
+                      <ArrowRight size={18} />
+                    </Button>
+                  </div>
+                  {error && <p className="text-xs text-red-400 font-medium pl-1">{error}</p>}
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-                <span className="text-white font-display font-bold text-sm">iK</span>
+          <div className="lg:col-span-2">
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 via-brand-500 to-violet-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" />
+                  <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
-              <span className="font-display font-bold text-xl text-white">
-                iKnow<span className="text-primary-400">.tech</span>
+              <span className="font-display font-bold text-2xl tracking-tight text-white">
+                iKnow<span className="bg-gradient-to-r from-cyan-400 to-brand-400 bg-clip-text text-transparent">.tech</span>
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Delivering enterprise IT solutions, bespoke software, and AI-powered consultancy from London to the world.
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
+              Delivering enterprise IT solutions, bespoke software development, and AI-powered consultancy from London to the world.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3 text-sm text-slate-400">
+            <div className="space-y-3.5 text-sm text-slate-400">
               <div className="flex items-start gap-3">
-                <MapPin size={16} className="mt-0.5 text-primary-400 shrink-0" />
+                <MapPin size={16} className="mt-0.5 text-cyan-400 shrink-0" />
                 <span>London, United Kingdom</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={16} className="text-primary-400 shrink-0" />
+                <Mail size={16} className="text-cyan-400 shrink-0" />
                 <a href="mailto:info@iknow.tech" className="hover:text-white transition-colors">
                   info@iknow.tech
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone size={16} className="text-primary-400 shrink-0" />
+                <Phone size={16} className="text-cyan-400 shrink-0" />
                 <a href="tel:+442012345678" className="hover:text-white transition-colors">
                   +44 20 1234 5678
                 </a>
@@ -78,10 +149,10 @@ export default function Footer() {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-slate-300 mb-5">
+              <h3 className="font-display font-bold text-xs uppercase tracking-widest text-slate-200 mb-6">
                 {title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {links.map((link) => (
                   <li key={link.label}>
                     {link.href ? (
@@ -89,14 +160,14 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-slate-400 hover:text-white transition-colors"
+                        className="text-sm text-slate-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-200"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         to={link.to}
-                        className="text-sm text-slate-400 hover:text-white transition-colors"
+                        className="text-sm text-slate-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-200"
                       >
                         {link.label}
                       </Link>
@@ -110,20 +181,23 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="border-t border-dark-800/60 bg-dark-900/50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
             &copy; {new Date().getFullYear()} iKnow Technology Ltd. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            {socialLinks.map(({ icon: Icon, href, label }) => (
+          <div className="flex items-center gap-2">
+            {socialLinks.map(({ icon: Icon, href, label, color }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-slate-500 hover:text-white transition-colors p-2 rounded-lg hover:bg-slate-800"
+                className={cn(
+                  'text-slate-500 p-2.5 rounded-xl bg-dark-700/30 border border-dark-800/60 hover:bg-dark-700/60 hover:border-dark-600 transition-all duration-300',
+                  color
+                )}
               >
                 <Icon size={18} />
               </a>
