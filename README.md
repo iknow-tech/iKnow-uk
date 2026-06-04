@@ -1,16 +1,39 @@
-# React + Vite
+# iKnow Technology
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Enterprise IT solutions, bespoke software development, and AI-powered consultancy website.
 
-Currently, two official plugins are available:
+**Tech Stack:** React 19, Vite 8, Tailwind CSS v4, React Router v7, Lucide Icons.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting Started
 
-## React Compiler
+```bash
+npm install
+npm run dev      # Start dev server at http://localhost:5173
+npm run build    # Production build to dist/
+npm run preview  # Preview production build locally
+npm run lint     # Run ESLint
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
+```
+src/
+├── App.jsx              # Route definitions
+├── main.jsx             # Entry point
+├── index.css            # Tailwind & global styles
+├── components/
+│   ├── layout/          # Navbar, Footer, Layout shell
+│   ├── sections/        # Page section blocks
+│   └── ui/              # Reusable UI primitives
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions
+└── pages/               # Route page components
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deployment
+
+Build the project and deploy the `dist/` folder to any static hosting provider (Vercel, Netlify, Cloudflare Pages, etc.).
+
+```bash
+npm run build
+```

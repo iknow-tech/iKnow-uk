@@ -6,11 +6,8 @@ import Product from './pages/Product';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Solutions from './pages/Solutions';
+import NotFound from './pages/NotFound';
 
-/**
- * App — Route definitions.
- * All pages render inside Layout (Navbar + Footer).
- */
 export default function App() {
   return (
     <Routes>
@@ -21,6 +18,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

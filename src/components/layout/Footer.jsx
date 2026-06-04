@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { LinkedinIcon, TwitterIcon, GithubIcon } from '../ui/SocialIcons';
 import Button from '../ui/Button';
+import Logo from '../ui/Logo';
 import { cn } from '../../lib/utils';
 
 
@@ -34,9 +35,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: LinkedinIcon, href: '#', label: 'LinkedIn', color: 'hover:text-cyan-400' },
-  { icon: TwitterIcon, href: '#', label: 'Twitter / X', color: 'hover:text-brand-400' },
-  { icon: GithubIcon, href: '#', label: 'GitHub', color: 'hover:text-violet-400' },
+  { icon: LinkedinIcon, href: 'https://www.linkedin.com/company/iknow-technology', label: 'LinkedIn', color: 'hover:text-cyan-400' },
+  { icon: TwitterIcon, href: 'https://twitter.com/iknowtech', label: 'Twitter / X', color: 'hover:text-brand-400' },
+  { icon: GithubIcon, href: 'https://github.com/iknow-technology', label: 'GitHub', color: 'hover:text-violet-400' },
 ];
 
 export default function Footer() {
@@ -110,17 +111,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 via-brand-500 to-violet-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" />
-                  <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="font-display font-bold text-2xl tracking-tight text-white">
-                iKnow<span className="bg-gradient-to-r from-cyan-400 to-brand-400 bg-clip-text text-transparent">.tech</span>
-              </span>
-            </Link>
+            <Logo className="mb-6" />
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
               Delivering enterprise IT solutions, bespoke software development, and AI-powered consultancy from London to the world.
             </p>

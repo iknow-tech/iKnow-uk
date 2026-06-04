@@ -4,12 +4,7 @@ import { LinkedinIcon, TwitterIcon, GithubIcon } from '../components/ui/SocialIc
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import SectionHeading from '../components/ui/SectionHeading';
-
-/**
- * Contact Page — World-class contact portal.
- * Features a fully functional contact form, an interactive Mock Calendly scheduler,
- * a Google Maps iframe embed, and premium dark glass design patterns.
- */
+import { useContactForm } from '../hooks/useContactForm';
 
 const contactDetails = [
   {
@@ -35,45 +30,20 @@ const contactDetails = [
 ];
 
 const socialLinks = [
-  { icon: LinkedinIcon, href: '#', label: 'LinkedIn', color: 'hover:text-cyan-400' },
-  { icon: TwitterIcon, href: '#', label: 'Twitter / X', color: 'hover:text-brand-400' },
-  { icon: GithubIcon, href: '#', label: 'GitHub', color: 'hover:text-violet-400' },
+  { icon: LinkedinIcon, href: 'https://www.linkedin.com/company/iknow-technology', label: 'LinkedIn', color: 'hover:text-cyan-400' },
+  { icon: TwitterIcon, href: 'https://twitter.com/iknowtech', label: 'Twitter / X', color: 'hover:text-brand-400' },
+  { icon: GithubIcon, href: 'https://github.com/iknow-technology', label: 'GitHub', color: 'hover:text-violet-400' },
 ];
 
 const availableDays = ['Monday', 'Tuesday', 'Wednesday'];
 const availableSlots = ['10:00 AM', '11:30 AM', '02:00 PM', '03:30 PM'];
 
 export default function Contact() {
-  // Contact form state
-  const [formData, setFormData] = useState({ name: '', email: '', company: '', phone: '', subject: '', message: '' });
-  const [formErrors, setFormErrors] = useState({});
-  const [formSuccess, setFormSuccess] = useState(false);
+  const { formData, setFormData, errors: formErrors, success: formSuccess, setSuccess: setFormSuccess, handleSubmit: handleFormSubmit } = useContactForm(['name', 'email', 'company', 'phone', 'subject', 'message']);
 
-  // Scheduler state
   const [selectedDay, setSelectedDay] = useState('Monday');
   const [selectedSlot, setSelectedSlot] = useState('');
   const [bookingSuccess, setBookingSuccess] = useState(false);
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const errors = {};
-    if (!formData.name.trim()) errors.name = 'Full Name is required';
-    if (!formData.email.trim()) {
-      errors.email = 'Email address is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = 'Please provide a valid email';
-    }
-    if (!formData.message.trim()) errors.message = 'Message is required';
-
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      return;
-    }
-
-    setFormErrors({});
-    setFormSuccess(true);
-    setFormData({ name: '', email: '', company: '', phone: '', subject: '', message: '' });
-  };
 
   const handleBookingSubmit = (e) => {
     e.preventDefault();

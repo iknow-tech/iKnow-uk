@@ -25,7 +25,7 @@ export default function TrustedBySection() {
         </p>
       </div>
 
-      <Marquee speed="slow" pauseOnHover className="py-2">
+      <Marquee pauseOnHover className="py-2">
         {partners.map((partner) => (
           <div
             key={partner.name}

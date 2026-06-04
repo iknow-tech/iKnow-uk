@@ -1,13 +1,8 @@
-import { useState } from 'react';
 import { Mail, MapPin, Phone, Send, CheckCircle2 } from 'lucide-react';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import SectionHeading from '../ui/SectionHeading';
-
-/**
- * Premium ContactSection.
- * Features full glassmorphism form, dark mode styling, and local state validation.
- */
+import { useContactForm } from '../../hooks/useContactForm';
 
 const contactInfo = [
   {
@@ -33,30 +28,7 @@ const contactInfo = [
 ];
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
-    }
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    setErrors({});
-    setSuccess(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  const { formData, setFormData, errors, success, setSuccess, handleSubmit } = useContactForm();
 
   return (
     <section className="bg-dark-900 border-t border-dark-800/60 py-24 md:py-32 relative overflow-hidden">
