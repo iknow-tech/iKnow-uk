@@ -64,19 +64,16 @@ export default function ProcessSection() {
         />
 
         {/* Process steps grid */}
-        <div
-          ref={ref}
-          className={cn(
-            'grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8 relative transition-all duration-1000',
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          )}
-        >
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8 relative">
           {steps.map((step, idx) => (
             <Card
               key={step.num}
               dark
               glow
-              className="relative group transition-all duration-300 flex flex-col justify-between"
+              className={cn(
+                'relative group transition-all duration-700 flex flex-col justify-between',
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              )}
               style={{ transitionDelay: `${idx * 0.1}s` }}
             >
               {/* Connector line for large screens */}

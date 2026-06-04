@@ -9,12 +9,12 @@ import AnimatedCounter from '../components/ui/AnimatedCounter';
  */
 
 const milestones = [
-  { year: '2015', title: 'Founded in London', description: 'iKnow Technology was established with a vision to deliver cutting-edge IT solutions to enterprises across the UK.' },
-  { year: '2017', title: 'First Enterprise Client', description: 'Secured our first Fortune 500 engagement, delivering bespoke cloud migration and software architecture.' },
-  { year: '2019', title: 'AI Division Launched', description: 'Expanded into artificial intelligence and machine learning, building predictive models for the finance sector.' },
-  { year: '2021', title: 'Global Expansion', description: 'Opened satellite offices and partnerships across Europe, MENA, and Asia-Pacific markets.' },
-  { year: '2023', title: '200+ Enterprise Clients', description: 'Surpassed 200 active enterprise accounts, with solutions deployed in 30+ countries worldwide.' },
-  { year: '2025', title: 'Next-Gen AI Platform', description: 'Launched our proprietary AI Decision Intelligence platform, serving real-time inference at enterprise scale.' },
+  { year: 'June 2022', title: 'UK Operations Launched', description: 'iKnow Technology began operating in the UK with a focus on practical software delivery, IT consultancy, and reliable client support.' },
+  { year: 'Q4 2022', title: 'First Delivery Frameworks', description: 'Built the first repeatable project workflows for infrastructure reviews, bespoke web platforms, and technical scoping sessions.' },
+  { year: '2023', title: 'Software Practice Expanded', description: 'Grew the engineering capability around modular web applications, backend APIs, and maintainable enterprise integrations.' },
+  { year: '2024', title: 'Cloud & Security Services', description: 'Extended delivery into cloud migration planning, cybersecurity reviews, access control design, and operational resilience.' },
+  { year: '2025', title: 'AI Automation Offering', description: 'Introduced secure automation and AI-assisted process improvement for document workflows, forecasting, and business operations.' },
+  { year: '2026', title: 'Staines Office Presence', description: 'Strengthened the UK footprint with Staines-upon-Thames office operations while continuing to support clients across London and beyond.' },
 ];
 
 const values = [
@@ -46,14 +46,14 @@ export default function About() {
           <div className="flex justify-center mb-6">
             <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-bold tracking-widest text-cyan-400 uppercase">
               <Globe size={13} className="text-cyan-400" />
-              London, United Kingdom
+              London & Staines-upon-Thames, UK
             </span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] tracking-tight max-w-4xl mx-auto">
             Shaping the Future of <span className="gradient-text">Enterprise Technology</span>
           </h1>
           <p className="mt-6 text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Since 2015, iKnow Technology has been at the forefront of digital innovation, helping organizations worldwide architect robust software platforms.
+            Since June 2022, iKnow Technology has helped organisations design practical software systems, modernise infrastructure, and adopt secure AI-enabled workflows.
           </p>
         </div>
       </section>
@@ -102,8 +102,8 @@ export default function About() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Journey"
-            title="A Decade of Innovation"
-            subtitle="How we grew from a small London consultancy to a globally recognized engineering powerhouse."
+            title="Growth Since June 2022"
+            subtitle="How our UK journey has progressed through software delivery, cloud consulting, cybersecurity, and AI-enabled automation."
             light
           />
 

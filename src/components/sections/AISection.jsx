@@ -60,13 +60,12 @@ export default function AISection() {
 
         {/* Capability Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {aiCapabilities.map((cap, index) => (
+          {aiCapabilities.map((cap) => (
             <Card
               key={cap.title}
               dark
               glow
               className="group relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Background gradient on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

@@ -20,14 +20,12 @@ const solutions = [
   {
     icon: Bot,
     title: 'Bespoke Software Development',
-    titleFull: 'Software Engineering',
     description: 'Design and build modular web applications, native backend APIs, and reliable edge processing networks using vetted modern development stacks.',
     highlights: ['Distributed Web Apps', 'High-speed API Architectures', 'Edge-network Deployments'],
   },
   {
     icon: Sparkles,
     title: 'AI & Process Automation',
-    titleFull: 'AI Automation',
     description: 'Deploy advanced predictive telemetry engines and custom LLM inference processes directly inside sandboxed local compliance boundaries.',
     highlights: ['Predictive Inference Engines', 'Intelligent Data Extractions', 'Secure Sandboxed LLMs'],
   },

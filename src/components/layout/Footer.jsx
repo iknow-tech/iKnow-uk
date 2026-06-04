@@ -5,6 +5,7 @@ import { LinkedinIcon, TwitterIcon, GithubIcon } from '../ui/SocialIcons';
 import Button from '../ui/Button';
 import Logo from '../ui/Logo';
 import { cn } from '../../lib/utils';
+import { companyInfo } from '../../lib/companyInfo';
 
 
 /**
@@ -22,9 +23,10 @@ const footerLinks = {
   ],
   services: [
     { label: 'IT Consultancy', to: '/solutions' },
-    { label: 'Software Development', to: '/product' },
+    { label: 'AI Products', to: '/product' },
+    { label: 'Customer Care AI', to: '/product' },
+    { label: 'Marketing Automation AI', to: '/product' },
     { label: 'AI & Automation', to: '/solutions' },
-    { label: 'Cloud Solutions', to: '/solutions' },
   ],
   resources: [
     { label: 'Documentation', to: '/blog' },
@@ -120,18 +122,23 @@ export default function Footer() {
             <div className="space-y-3.5 text-sm text-slate-400">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="mt-0.5 text-cyan-400 shrink-0" />
-                <span>London, United Kingdom</span>
+                <span>
+                  <span className="block font-semibold text-slate-300">{companyInfo.londonAddress.label}</span>
+                  {companyInfo.londonAddress.line}
+                  <span className="mt-2 block font-semibold text-slate-300">{companyInfo.officeAddress.label}</span>
+                  {companyInfo.officeAddress.line}
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} className="text-cyan-400 shrink-0" />
-                <a href="mailto:info@iknow.tech" className="hover:text-white transition-colors">
-                  info@iknow.tech
+                <a href={companyInfo.emailHref} className="hover:text-white transition-colors">
+                  {companyInfo.email}
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={16} className="text-cyan-400 shrink-0" />
-                <a href="tel:+442012345678" className="hover:text-white transition-colors">
-                  +44 20 1234 5678
+                <a href={companyInfo.phoneHref} className="hover:text-white transition-colors">
+                  {companyInfo.phone}
                 </a>
               </div>
             </div>

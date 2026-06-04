@@ -13,7 +13,7 @@ import Logo from '../ui/Logo';
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/product', label: 'Product' },
+  { to: '/product', label: 'AI Products' },
   { to: '/solutions', label: 'Solutions' },
   { to: '/blog', label: 'Blog' },
 ];

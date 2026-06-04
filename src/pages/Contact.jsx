@@ -5,22 +5,28 @@ import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import SectionHeading from '../components/ui/SectionHeading';
 import { useContactForm } from '../hooks/useContactForm';
+import { companyInfo } from '../lib/companyInfo';
 
 const contactDetails = [
   {
     icon: MapPin,
+    title: 'London Address',
+    lines: [companyInfo.londonAddress.label, companyInfo.londonAddress.line],
+  },
+  {
+    icon: MapPin,
     title: 'Office Address',
-    lines: ['iKnow Technology Ltd', '123 Tech Quarter', 'London EC2A 4NE', 'United Kingdom'],
+    lines: [companyInfo.officeAddress.label, companyInfo.officeAddress.line],
   },
   {
     icon: Mail,
     title: 'Email Communications',
-    lines: ['General: info@iknow.tech', 'Architecture: sales@iknow.tech', 'Security SLA: support@iknow.tech'],
+    lines: [companyInfo.email],
   },
   {
     icon: Phone,
-    title: 'Corporate Lines',
-    lines: ['Main: +44 20 1234 5678', 'Sales: +44 20 1234 5679'],
+    title: 'Corporate Line',
+    lines: [companyInfo.phone],
   },
   {
     icon: Clock,
@@ -132,7 +138,7 @@ export default function Contact() {
                         id="contact-phone"
                         label="Phone Number"
                         type="tel"
-                        placeholder="+44 20 ..."
+                        placeholder="+4407539758675"
                         dark
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -294,15 +300,15 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Map Location"
-            title="Strategic London Headquarters"
-            subtitle="Drop by our office located in the tech heart of London."
+            title="Staines-upon-Thames Office"
+            subtitle="Find our office at Staines-upon-Thames, TW18 4AX."
             light
           />
           
           <div className="rounded-2xl overflow-hidden border border-dark-800 shadow-2xl h-[350px] md:h-[450px]">
             <iframe
-              title="iKnow London Office Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.493235777478!2d-0.0860533233816654!3d51.52251147181673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761cb1e6a17db9%3A0xe54fb7dc3b9dbb!2sShoreditch%2C%20London!5e0!3m2!1sen!2sgb!4v1700000000000!5m2!1sen!2sgb"
+              title="iKnow Staines-upon-Thames Office Location Map"
+              src={companyInfo.mapEmbed}
               width="100%"
               height="100%"
               style={{ border: 0 }}

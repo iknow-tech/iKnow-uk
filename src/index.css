@@ -158,6 +158,11 @@ html {
 ::-webkit-scrollbar-thumb { background: var(--color-dark-500); border-radius: 6px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-brand-600); }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-dark-500) var(--color-dark-900);
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-text);

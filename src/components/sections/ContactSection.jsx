@@ -3,27 +3,28 @@ import Button from '../ui/Button';
 import Input from '../ui/Input';
 import SectionHeading from '../ui/SectionHeading';
 import { useContactForm } from '../../hooks/useContactForm';
+import { companyInfo } from '../../lib/companyInfo';
 
 const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    detail: 'London, United Kingdom',
-    sub: 'Mon – Fri, 9:00 – 18:00 GMT',
+    detail: companyInfo.londonAddress.line,
+    sub: `${companyInfo.officeAddress.label}: ${companyInfo.officeAddress.line}`,
   },
   {
     icon: Mail,
     title: 'Email Us',
-    detail: 'info@iknow.tech',
+    detail: companyInfo.email,
     sub: 'Quick support SLA responses',
-    href: 'mailto:info@iknow.tech',
+    href: companyInfo.emailHref,
   },
   {
     icon: Phone,
     title: 'Call Us',
-    detail: '+44 20 1234 5678',
+    detail: companyInfo.phone,
     sub: 'Direct line for corporate inquiries',
-    href: 'tel:+442012345678',
+    href: companyInfo.phoneHref,
   },
 ];
 
