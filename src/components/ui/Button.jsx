@@ -5,17 +5,17 @@ import { cn } from '../../lib/utils';
  */
 const variants = {
   primary:
-    'border border-brand-500/80 bg-brand-600 text-white shadow-sm shadow-black/10 hover:border-brand-400 hover:bg-brand-500',
+    'bg-brand-500 text-white border border-brand-500 hover:bg-brand-400 hover:border-brand-400 transition-all duration-300',
   secondary:
-    'border border-dark-700/80 bg-dark-900/55 text-slate-200 hover:border-brand-400/70 hover:bg-dark-800/80 hover:text-white',
+    'bg-transparent text-white border border-white/30 hover:bg-white hover:text-brand-900 hover:border-white transition-all duration-300',
   ghost:
-    'text-text-muted hover:text-text hover:bg-surface-100 bg-transparent',
+    'text-text-muted hover:text-text hover:bg-surface-100 bg-transparent transition-all duration-300',
   accent:
-    'border border-orange-800/80 bg-orange-700 text-white shadow-sm shadow-black/10 hover:border-orange-600 hover:bg-orange-600',
+    'bg-orange-400 text-white border border-orange-500 hover:bg-orange-600 hover:border-orange-600 transition-all duration-300',
   outline:
-    'border border-border text-text hover:border-brand-400 hover:text-brand-600 bg-transparent',
+    'bg-transparent border border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white transition-all duration-300',
   dark:
-    'bg-dark-700 border border-dark-600 text-white hover:bg-dark-600 hover:border-dark-500',
+    'bg-dark-700 border border-dark-600 text-white hover:bg-dark-600 hover:border-dark-500 transition-all duration-300',
 };
 
 const sizes = {
