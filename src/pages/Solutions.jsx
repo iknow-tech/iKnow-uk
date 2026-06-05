@@ -121,12 +121,12 @@ export default function Solutions() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 lg:items-end">
-              <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:justify-end">
+            <div className="flex flex-col gap-2 lg:items-end">
+              <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row lg:justify-end">
                 <Link to="/contact" className="w-full sm:w-auto">
-                  <Button size="lg" variant="accent" className="w-full px-8">
-                    Consult with our Architects
-                    <ArrowRight size={18} />
+                  <Button size="md" variant="accent" className="w-full whitespace-nowrap px-5 sm:w-auto">
+                    Consult Architects
+                    <ArrowRight size={16} />
                   </Button>
                 </Link>
 
@@ -134,13 +134,13 @@ export default function Solutions() {
                   href="https://iknow.solutions/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-3 rounded-xl border border-dark-700/80 bg-dark-900/60 px-8 py-4 font-display text-lg font-semibold text-slate-200 transition-all duration-300 hover:border-brand-400/60 hover:bg-dark-800/80 hover:text-white sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-dark-700/80 bg-dark-900/55 px-5 py-3 font-display text-base font-semibold text-slate-200 hover:border-brand-400/60 hover:bg-dark-800/80 hover:text-white sm:w-auto"
                 >
                   Visit iKnow Solutions
-                  <ExternalLink size={18} />
+                  <ExternalLink size={16} />
                 </a>
               </div>
-              <p className="text-xs font-medium text-slate-500">
+              <p className="text-[11px] font-medium text-slate-500 lg:pr-1">
                 External portal opens in a new window.
               </p>
             </div>

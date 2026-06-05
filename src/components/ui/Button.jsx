@@ -11,7 +11,7 @@ const variants = {
   ghost:
     'text-text-muted hover:text-text hover:bg-surface-100 bg-transparent',
   accent:
-    'border border-orange-500/80 bg-orange-500 text-white shadow-sm shadow-black/10 hover:border-orange-400 hover:bg-orange-400',
+    'border border-orange-800/80 bg-orange-700 text-white shadow-sm shadow-black/10 hover:border-orange-600 hover:bg-orange-600',
   outline:
     'border border-border text-text hover:border-brand-400 hover:text-brand-600 bg-transparent',
   dark:
