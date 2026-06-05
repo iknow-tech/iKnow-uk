@@ -46,7 +46,7 @@ export default function AISection() {
       <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
 
       {/* Glowing Accents */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-500/10 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[200px] bg-brand-500/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -68,12 +68,12 @@ export default function AISection() {
               className="group relative overflow-hidden"
             >
               {/* Background gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div className="relative z-10">
                 {/* Icon wrapper */}
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5 group-hover:border-cyan-500/40 group-hover:scale-105 transition-all duration-300">
-                  <cap.icon size={22} className="text-cyan-400" />
+                <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-5 group-hover:border-orange-500/40 group-hover:scale-105 transition-all duration-300">
+                  <cap.icon size={22} className="text-orange-400" />
                 </div>
 
                 {/* Title */}
@@ -87,9 +87,9 @@ export default function AISection() {
                 </p>
 
                 {/* Stats badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  <span className="text-xs font-semibold text-cyan-400">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
+                  <span className="text-xs font-semibold text-orange-400">
                     {cap.stats}
                   </span>
                 </div>
@@ -103,7 +103,7 @@ export default function AISection() {
           {platformFeatures.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3 text-slate-300">
               <div className="w-10 h-10 rounded-xl bg-dark-700/40 border border-dark-800 flex items-center justify-center shrink-0">
-                <Icon size={18} className="text-cyan-400" />
+                <Icon size={18} className="text-orange-400" />
               </div>
               <span className="text-sm font-semibold tracking-wide">{label}</span>
             </div>

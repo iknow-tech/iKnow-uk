@@ -3,7 +3,7 @@ import { cn } from '../../lib/utils';
 /**
  * Premium Button — 4 variants, 3 sizes.
  * Primary has shimmer + magnetic feel.
- * Accent has cyan glow pulse.
+ * Accent has orange glow pulse.
  */
 const variants = {
   primary:
@@ -13,7 +13,7 @@ const variants = {
   ghost:
     'text-text-muted hover:text-text hover:bg-surface-100 bg-transparent',
   accent:
-    'relative overflow-hidden bg-gradient-to-r from-cyan-500 to-brand-500 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:from-cyan-400 hover:to-brand-400 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700',
+    'relative overflow-hidden bg-gradient-to-r from-orange-500 to-brand-500 text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:from-orange-400 hover:to-brand-400 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700',
   outline:
     'border border-border text-text hover:border-brand-400 hover:text-brand-600 bg-transparent',
   dark:

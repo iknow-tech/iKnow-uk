@@ -37,9 +37,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: LinkedinIcon, href: 'https://www.linkedin.com/company/iknow-technology', label: 'LinkedIn', color: 'hover:text-cyan-400' },
+  { icon: LinkedinIcon, href: 'https://www.linkedin.com/company/iknow-technology', label: 'LinkedIn', color: 'hover:text-orange-400' },
   { icon: TwitterIcon, href: 'https://twitter.com/iknowtech', label: 'Twitter / X', color: 'hover:text-brand-400' },
-  { icon: GithubIcon, href: 'https://github.com/iknow-technology', label: 'GitHub', color: 'hover:text-violet-400' },
+  { icon: GithubIcon, href: 'https://github.com/iknow-technology', label: 'GitHub', color: 'hover:text-brand-400' },
 ];
 
 export default function Footer() {
@@ -62,14 +62,14 @@ export default function Footer() {
     <footer className="bg-midnight border-t border-dark-800/60 text-white relative overflow-hidden">
       {/* Subtle Background Glows */}
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-600/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-orange-600/5 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Top Banner: Newsletter */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-12 border-b border-dark-800/60">
         <div className="relative rounded-2xl glass-dark border border-dark-800/80 p-8 md:p-12 overflow-hidden shadow-2xl">
           {/* Subtle noise texture */}
           <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
-          <div className="absolute -right-10 -top-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute -right-10 -top-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl" />
 
           <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-7">
@@ -94,7 +94,7 @@ export default function Footer() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
-                      className="flex-1 bg-dark-700/50 border border-dark-600/80 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/10 transition-all duration-300"
+                      className="flex-1 bg-dark-700/50 border border-dark-600/80 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10 transition-all duration-300"
                     />
                     <Button variant="accent" size="sm" type="submit" className="px-5">
                       <ArrowRight size={18} />
@@ -121,7 +121,7 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3.5 text-sm text-slate-400">
               <div className="flex items-start gap-3">
-                <MapPin size={16} className="mt-0.5 text-cyan-400 shrink-0" />
+                <MapPin size={16} className="mt-0.5 text-orange-400 shrink-0" />
                 <span>
                   <span className="block font-semibold text-slate-300">{companyInfo.londonAddress.label}</span>
                   {companyInfo.londonAddress.line}
@@ -130,13 +130,13 @@ export default function Footer() {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={16} className="text-cyan-400 shrink-0" />
+                <Mail size={16} className="text-orange-400 shrink-0" />
                 <a href={companyInfo.emailHref} className="hover:text-white transition-colors">
                   {companyInfo.email}
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone size={16} className="text-cyan-400 shrink-0" />
+                <Phone size={16} className="text-orange-400 shrink-0" />
                 <a href={companyInfo.phoneHref} className="hover:text-white transition-colors">
                   {companyInfo.phone}
                 </a>

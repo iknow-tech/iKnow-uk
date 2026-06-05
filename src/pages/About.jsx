@@ -40,12 +40,12 @@ export default function About() {
         <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
 
         <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full bg-brand-500/10 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-bold tracking-widest text-cyan-400 uppercase">
-              <Globe size={13} className="text-cyan-400" />
+            <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-bold tracking-widest text-orange-400 uppercase">
+              <Globe size={13} className="text-orange-400" />
               London & Staines-upon-Thames, UK
             </span>
           </div>
@@ -65,8 +65,8 @@ export default function About() {
             {values.map(({ icon: Icon, title, description }) => (
               <Card key={title} dark glow className="text-center p-8 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="w-14 h-14 mx-auto rounded-2xl bg-dark-800 border border-dark-700/60 flex items-center justify-center mb-6 group-hover:border-cyan-500/40 transition-colors duration-300">
-                  <Icon size={24} className="text-cyan-400" />
+                <div className="w-14 h-14 mx-auto rounded-2xl bg-dark-800 border border-dark-700/60 flex items-center justify-center mb-6 group-hover:border-orange-500/40 transition-colors duration-300">
+                  <Icon size={24} className="text-orange-400" />
                 </div>
                 <h3 className="font-display font-bold text-xl mb-3 text-white">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
@@ -109,7 +109,7 @@ export default function About() {
 
           <div className="relative mt-16">
             {/* Elegant vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-brand-500 to-violet-500 md:-translate-x-0.5" />
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-brand-500 to-brand-500 md:-translate-x-0.5" />
 
             <div className="space-y-12">
               {milestones.map((item, index) => (
@@ -120,7 +120,7 @@ export default function About() {
                   }`}
                 >
                   {/* Glowing timeline node */}
-                  <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-cyan-400 border-4 border-dark-900 -translate-x-2 mt-2 z-10 shadow-lg shadow-cyan-400/40 animate-pulse" />
+                  <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-orange-400 border-4 border-dark-900 -translate-x-2 mt-2 z-10 shadow-lg shadow-orange-400/40 animate-pulse" />
 
                   {/* Desktop layout spacer */}
                   <div className="hidden md:block md:w-1/2" />
@@ -128,8 +128,8 @@ export default function About() {
                   {/* Milestone Card */}
                   <div className="ml-14 md:ml-0 md:w-1/2">
                     <Card dark glow className="p-6 relative group overflow-hidden">
-                      <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">{item.year}</span>
-                      <h3 className="font-display font-bold text-lg mt-1 mb-2 text-white group-hover:text-cyan-400 transition-colors">
+                      <span className="text-xs font-bold text-orange-400 uppercase tracking-widest">{item.year}</span>
+                      <h3 className="font-display font-bold text-lg mt-1 mb-2 text-white group-hover:text-orange-400 transition-colors">
                         {item.title}
                       </h3>
                       <p className="text-slate-400 text-xs leading-relaxed">{item.description}</p>
@@ -159,11 +159,11 @@ export default function About() {
               { icon: Globe, title: 'Global Outlook', description: 'A multicultural engineering team working with multinational enterprises across 30+ countries.' },
             ].map(({ icon: Icon, title, description }) => (
               <Card key={title} dark glow className="p-8 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="w-12 h-12 rounded-xl bg-dark-800 border border-dark-700/65 flex items-center justify-center mb-6 group-hover:border-cyan-500/40 transition-colors">
-                  <Icon size={20} className="text-cyan-400" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="w-12 h-12 rounded-xl bg-dark-800 border border-dark-700/65 flex items-center justify-center mb-6 group-hover:border-orange-500/40 transition-colors">
+                  <Icon size={20} className="text-orange-400" />
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2 text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
+                <h3 className="font-display font-bold text-lg mb-2 text-white group-hover:text-orange-400 transition-colors">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
               </Card>
             ))}

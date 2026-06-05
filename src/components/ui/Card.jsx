@@ -29,7 +29,7 @@ export default function Card({
         hover && !glow && 'hover:shadow-xl hover:-translate-y-1',
         hover && dark && !glow && 'hover:border-dark-600 hover:shadow-dark-900/50',
         // Glow variant
-        glow && dark && 'glow-border-cyan hover:-translate-y-1',
+        glow && dark && 'glow-border-orange hover:-translate-y-1',
         glow && !dark && 'glow-border hover:-translate-y-1',
         className
       )}

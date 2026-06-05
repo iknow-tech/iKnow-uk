@@ -35,7 +35,7 @@ const products = [
       'AI-assisted routing and automation',
       'Powerful admin tools for support teams',
     ],
-    iconColor: 'text-cyan-400',
+    iconColor: 'text-orange-400',
   },
   {
     icon: Megaphone,
@@ -77,7 +77,7 @@ const products = [
       'Knowledge extraction and document processing',
       'Employee copilot and multilingual self-service',
     ],
-    iconColor: 'text-violet-400',
+    iconColor: 'text-brand-400',
   },
 ];
 
@@ -200,11 +200,11 @@ export default function Product() {
         <div className="absolute inset-0 grid-overlay opacity-40 pointer-events-none" />
         <div className="absolute inset-0 grid-overlay-fine opacity-20 pointer-events-none" />
         <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 w-[500px] h-[400px] bg-cyan-500/10 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 w-[500px] h-[400px] bg-orange-500/10 blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6 flex justify-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4.5 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-400">
+            <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-4.5 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-400">
               <Sparkles size={13} />
               AI Product Suite
             </span>
@@ -231,11 +231,11 @@ export default function Product() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {products.map(({ icon: Icon, name, tagline, description, features, iconColor }) => (
               <Card key={name} dark glow className="flex flex-col p-8 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between gap-5 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-dark-800 border border-dark-700/60 flex items-center justify-center group-hover:border-cyan-500/40 transition-colors shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-dark-800 border border-dark-700/60 flex items-center justify-center group-hover:border-orange-500/40 transition-colors shrink-0">
                       <Icon size={26} className={iconColor} />
                     </div>
                     <span className="rounded-full border border-dark-700/70 bg-dark-950/35 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-500">
@@ -244,13 +244,13 @@ export default function Product() {
                   </div>
 
                   <h3 className="font-display font-bold text-2xl mb-2 text-white">{name}</h3>
-                  <p className="text-cyan-400 text-xs font-bold tracking-wide uppercase mb-4">{tagline}</p>
+                  <p className="text-orange-400 text-xs font-bold tracking-wide uppercase mb-4">{tagline}</p>
                   <p className="text-slate-400 text-sm leading-relaxed mb-6">{description}</p>
 
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-auto mb-8">
                     {features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2.5 text-xs font-semibold text-slate-300">
-                        <Check size={14} className="mt-0.5 text-cyan-400 shrink-0" />
+                        <Check size={14} className="mt-0.5 text-orange-400 shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -294,7 +294,7 @@ export default function Product() {
                         : 'bg-dark-900/40 border-dark-800/60 text-slate-400 hover:text-white hover:bg-dark-900/80'
                     }`}
                   >
-                    <div className={`p-2 rounded-lg shrink-0 ${isSelected ? 'bg-brand-500/20 text-cyan-400' : 'bg-dark-800 text-slate-400'}`}>
+                    <div className={`p-2 rounded-lg shrink-0 ${isSelected ? 'bg-brand-500/20 text-orange-400' : 'bg-dark-800 text-slate-400'}`}>
                       <TabIcon size={18} />
                     </div>
                     <div className="min-w-0">
@@ -326,12 +326,12 @@ export default function Product() {
                           <span className="w-3 h-3 rounded-full bg-emerald-500/70" />
                         </div>
                         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
-                          <Server size={10} className="text-cyan-400" />
+                          <Server size={10} className="text-orange-400" />
                           iknow-ai-product-suite
                         </span>
                       </div>
 
-                      <pre className="p-6 overflow-x-auto text-xs font-mono text-cyan-300 leading-relaxed bg-dark-900/60 no-scrollbar">
+                      <pre className="p-6 overflow-x-auto text-xs font-mono text-orange-300 leading-relaxed bg-dark-900/60 no-scrollbar">
                         <code>{tab.content}</code>
                       </pre>
                     </div>
@@ -358,10 +358,10 @@ export default function Product() {
               <thead>
                 <tr className="border-b border-dark-800 bg-dark-900/40">
                   <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-slate-400">Capabilities</th>
-                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-cyan-400">Customer Care</th>
+                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-orange-400">Customer Care</th>
                   <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-brand-400">Marketing</th>
                   <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-emerald-400">Business Intel</th>
-                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-violet-400">Knowledge AI</th>
+                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-brand-400">Knowledge AI</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-dark-800/60">
@@ -369,7 +369,7 @@ export default function Product() {
                   <tr key={row.feature} className="hover:bg-dark-900/25 transition-colors">
                     <td className="p-5 text-sm font-semibold text-slate-300">{row.feature}</td>
                     <td className="p-5 text-slate-400">
-                      {row.care ? <Check size={18} className="text-cyan-400" /> : <span className="text-slate-600">-</span>}
+                      {row.care ? <Check size={18} className="text-orange-400" /> : <span className="text-slate-600">-</span>}
                     </td>
                     <td className="p-5 text-slate-400">
                       {row.marketing ? <Check size={18} className="text-brand-400" /> : <span className="text-slate-600">-</span>}
@@ -378,7 +378,7 @@ export default function Product() {
                       {row.intelligence ? <Check size={18} className="text-emerald-400" /> : <span className="text-slate-600">-</span>}
                     </td>
                     <td className="p-5 text-slate-400">
-                      {row.knowledge ? <Check size={18} className="text-violet-400" /> : <span className="text-slate-600">-</span>}
+                      {row.knowledge ? <Check size={18} className="text-brand-400" /> : <span className="text-slate-600">-</span>}
                     </td>
                   </tr>
                 ))}

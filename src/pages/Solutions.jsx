@@ -77,16 +77,16 @@ export default function Solutions() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {solutions.map(({ icon: Icon, title, description, highlights }) => (
               <Card key={title} dark glow className="flex flex-col p-8 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="w-14 h-14 rounded-2xl bg-dark-800 border border-dark-700/60 flex items-center justify-center mb-6 group-hover:border-cyan-500/40 transition-colors">
-                  <Icon size={26} className="text-cyan-400" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="w-14 h-14 rounded-2xl bg-dark-800 border border-dark-700/60 flex items-center justify-center mb-6 group-hover:border-orange-500/40 transition-colors">
+                  <Icon size={26} className="text-orange-400" />
                 </div>
                 <h3 className="font-display font-bold text-xl mb-3 text-white">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">{description}</p>
                 <ul className="space-y-3.5 mt-auto">
                   {highlights.map((h) => (
                     <li key={h} className="flex items-center gap-2.5 text-xs font-semibold text-slate-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 animate-pulse" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0 animate-pulse" />
                       {h}
                     </li>
                   ))}
@@ -100,7 +100,7 @@ export default function Solutions() {
             {additionalSolutions.map(({ icon: Icon, title, description }) => (
               <div key={title} className="flex items-start gap-4 p-6 rounded-2xl bg-dark-950/40 border border-dark-800/60 hover:border-dark-700 hover:shadow-xl transition-all duration-300">
                 <div className="w-10 h-10 rounded-xl bg-dark-800 border border-dark-700 flex items-center justify-center shrink-0">
-                  <Icon size={18} className="text-cyan-400" />
+                  <Icon size={18} className="text-orange-400" />
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-sm text-white mb-1">{title}</h4>
@@ -131,7 +131,7 @@ export default function Solutions() {
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm font-semibold text-slate-300">
                     <span>Monthly IT / Engineering Spend</span>
-                    <span className="text-cyan-400 font-mono">£{monthlySpend.toLocaleString()}</span>
+                    <span className="text-orange-400 font-mono">£{monthlySpend.toLocaleString()}</span>
                   </div>
                   <input
                     type="range"
@@ -140,7 +140,7 @@ export default function Solutions() {
                     step="10000"
                     value={monthlySpend}
                     onChange={(e) => setMonthlySpend(Number(e.target.value))}
-                    className="w-full h-1.5 bg-dark-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    className="w-full h-1.5 bg-dark-800 rounded-lg appearance-none cursor-pointer accent-orange-400"
                   />
                   <div className="flex justify-between text-[10px] text-slate-500 font-bold uppercase">
                     <span>£10K</span>
@@ -151,7 +151,7 @@ export default function Solutions() {
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm font-semibold text-slate-300">
                     <span>Manual Process Waste (Hours / Week)</span>
-                    <span className="text-cyan-400 font-mono">{wastedHours} hrs</span>
+                    <span className="text-orange-400 font-mono">{wastedHours} hrs</span>
                   </div>
                   <input
                     type="range"
@@ -160,7 +160,7 @@ export default function Solutions() {
                     step="5"
                     value={wastedHours}
                     onChange={(e) => setWastedHours(Number(e.target.value))}
-                    className="w-full h-1.5 bg-dark-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    className="w-full h-1.5 bg-dark-800 rounded-lg appearance-none cursor-pointer accent-orange-400"
                   />
                   <div className="flex justify-between text-[10px] text-slate-500 font-bold uppercase">
                     <span>5 hrs</span>
@@ -172,7 +172,7 @@ export default function Solutions() {
               {/* Savings Results Block */}
               <div className="md:col-span-5 p-6 bg-dark-900/60 border border-dark-800/80 rounded-2xl text-center relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-brand-500/10 rounded-full blur-2xl pointer-events-none" />
-                <Calculator className="mx-auto text-cyan-400 mb-3" size={28} />
+                <Calculator className="mx-auto text-orange-400 mb-3" size={28} />
                 <span className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">
                   Estimated Annual Savings
                 </span>
@@ -195,7 +195,7 @@ export default function Solutions() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-brand-500/5 blur-[120px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-bold tracking-widest text-cyan-400 uppercase mb-8">
+          <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-xs font-bold tracking-widest text-orange-400 uppercase mb-8">
             <Sparkles size={12} />
             Solutions Portal
           </span>
@@ -211,7 +211,7 @@ export default function Solutions() {
             href="https://iknow.solutions/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-display font-bold text-base text-white bg-gradient-to-r from-cyan-500 to-brand-500 hover:from-cyan-400 hover:to-brand-400 shadow-xl shadow-cyan-500/10 hover:shadow-cyan-500/25 hover:scale-[1.02] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-display font-bold text-base text-white bg-gradient-to-r from-orange-500 to-brand-500 hover:from-orange-400 hover:to-brand-400 shadow-xl shadow-orange-500/10 hover:shadow-orange-500/25 hover:scale-[1.02] transition-all duration-300"
           >
             Visit iKnow Solutions
             <ExternalLink size={18} />

@@ -24,7 +24,7 @@ export default function Input({
           htmlFor={id}
           className={cn(
             'block text-sm font-medium transition-colors duration-200',
-            focused ? (dark ? 'text-cyan-400' : 'text-brand-600') : (dark ? 'text-slate-400' : 'text-text-muted')
+            focused ? (dark ? 'text-orange-400' : 'text-brand-600') : (dark ? 'text-slate-400' : 'text-text-muted')
           )}
         >
           {label}
@@ -48,7 +48,7 @@ export default function Input({
           // Dark mode
           dark && [
             'bg-dark-700/60 border-dark-600/80 text-white placeholder:text-slate-500',
-            'focus:border-cyan-500/60 focus:ring-3 focus:ring-cyan-500/10 focus:bg-dark-700',
+            'focus:border-orange-500/60 focus:ring-3 focus:ring-orange-500/10 focus:bg-dark-700',
             error && 'border-red-500/60',
             'hover:border-dark-500',
           ],

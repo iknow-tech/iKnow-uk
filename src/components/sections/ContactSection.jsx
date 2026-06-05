@@ -35,7 +35,7 @@ export default function ContactSection() {
     <section className="bg-dark-900 border-t border-dark-800/60 py-24 md:py-32 relative overflow-hidden">
       {/* Decorative Orbs */}
       <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-brand-500/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -55,13 +55,13 @@ export default function ContactSection() {
             <div className="space-y-6">
               {contactInfo.map(({ icon: Icon, title, detail, sub, href }) => (
                 <div key={title} className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-dark-800 border border-dark-700/60 flex items-center justify-center shrink-0 group-hover:border-cyan-500/50 group-hover:bg-dark-750 transition-all duration-300">
-                    <Icon size={20} className="text-cyan-400" />
+                  <div className="w-12 h-12 rounded-xl bg-dark-800 border border-dark-700/60 flex items-center justify-center shrink-0 group-hover:border-orange-500/50 group-hover:bg-dark-750 transition-all duration-300">
+                    <Icon size={20} className="text-orange-400" />
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-white text-sm tracking-wide">{title}</h4>
                     {href ? (
-                      <a href={href} className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors text-sm mt-0.5 inline-block">
+                      <a href={href} className="text-orange-400 hover:text-orange-300 font-medium transition-colors text-sm mt-0.5 inline-block">
                         {detail}
                       </a>
                     ) : (

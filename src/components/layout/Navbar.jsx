@@ -68,7 +68,7 @@ export default function Navbar() {
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-cyan-400 to-brand-400 rounded-full" />
+                    <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-orange-400 to-brand-400 rounded-full" />
                   )}
                 </Link>
               );

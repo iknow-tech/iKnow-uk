@@ -19,15 +19,15 @@ export default function HeroSection() {
 
       {/* Decorative Orbs */}
       <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] rounded-full bg-brand-500/10 blur-[130px] animate-float-slow pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-cyan-500/8 blur-[110px] animate-float pointer-events-none" style={{ animationDelay: '-4s' }} />
-      <div className="absolute top-1/2 left-2/3 w-[300px] h-[300px] rounded-full bg-violet-500/5 blur-[100px] animate-pulse-glow pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-orange-500/8 blur-[110px] animate-float pointer-events-none" style={{ animationDelay: '-4s' }} />
+      <div className="absolute top-1/2 left-2/3 w-[300px] h-[300px] rounded-full bg-brand-500/5 blur-[100px] animate-pulse-glow pointer-events-none" />
 
       {/* Content Container */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
         {/* Glow Badge */}
         <div className="animate-fade-in mb-8 flex justify-center">
-          <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-bold tracking-widest text-cyan-400 uppercase shadow-inner shadow-brand-500/5">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-bold tracking-widest text-orange-400 uppercase shadow-inner shadow-brand-500/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
             London-Based • Globally Trusted
           </span>
         </div>

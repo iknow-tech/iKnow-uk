@@ -96,7 +96,7 @@ export default function Blog() {
         <div className="absolute inset-0 grid-overlay opacity-40 pointer-events-none" />
         <div className="absolute inset-0 grid-overlay-fine opacity-20 pointer-events-none" />
         <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-orange-500/10 blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight">
@@ -120,7 +120,7 @@ export default function Blog() {
                   onClick={() => setActiveCategory(cat)}
                   className={`shrink-0 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer border ${
                     isSelected
-                      ? 'bg-cyan-500 border-cyan-400 text-midnight shadow-lg shadow-cyan-500/20'
+                      ? 'bg-orange-500 border-orange-400 text-midnight shadow-lg shadow-orange-500/20'
                       : 'bg-dark-800/40 border-dark-800 text-slate-400 hover:text-white hover:bg-dark-800'
                   }`}
                 >
@@ -145,24 +145,24 @@ export default function Blog() {
                   <div className="absolute w-40 h-40 bg-brand-500/20 rounded-full blur-3xl pointer-events-none" />
 
                   <div className="text-center relative z-10">
-                    <span className="text-7xl lg:text-9xl font-display font-black bg-gradient-to-br from-cyan-400 via-brand-500 to-violet-500 bg-clip-text text-transparent opacity-80">
+                    <span className="text-7xl lg:text-9xl font-display font-black bg-gradient-to-br from-orange-400 via-brand-500 to-brand-500 bg-clip-text text-transparent opacity-80">
                       AI
                     </span>
-                    <p className="text-cyan-400 text-xs font-black tracking-widest uppercase mt-3">Featured Publication</p>
+                    <p className="text-orange-400 text-xs font-black tracking-widest uppercase mt-3">Featured Publication</p>
                   </div>
                 </div>
 
                 {/* Content Block */}
                 <div className="p-8 md:p-12 flex flex-col justify-center relative z-10">
                   <div className="flex items-center gap-3.5 mb-4">
-                    <Badge variant="cyan" dot>{featuredArticle.category}</Badge>
+                    <Badge variant="orange" dot>{featuredArticle.category}</Badge>
                     <span className="text-slate-400 text-xs font-semibold flex items-center gap-1.5">
                       <Clock size={13} />
                       {featuredArticle.readTime}
                     </span>
                   </div>
 
-                  <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                  <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-4 group-hover:text-orange-400 transition-colors duration-300">
                     {featuredArticle.title}
                   </h2>
 
@@ -174,7 +174,7 @@ export default function Blog() {
                     <time dateTime={featuredArticle.date} className="text-xs font-bold text-slate-500">
                       {formatDate(featuredArticle.date)}
                     </time>
-                    <span className="text-cyan-400 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                    <span className="text-orange-400 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
                       Read Article <ArrowRight size={14} />
                     </span>
                   </div>
@@ -204,7 +204,7 @@ export default function Blog() {
                 <article key={article.id} className="h-full">
                   <Card dark glow className="flex flex-col h-full group cursor-pointer relative overflow-hidden">
                     {/* Hover highlight overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                     <div className="relative z-10 flex flex-col h-full">
                       {/* Meta */}
@@ -217,7 +217,7 @@ export default function Blog() {
                       </div>
 
                       {/* Title */}
-                      <h2 className="font-display font-bold text-lg text-white mb-3 group-hover:text-cyan-400 transition-colors leading-snug">
+                      <h2 className="font-display font-bold text-lg text-white mb-3 group-hover:text-orange-400 transition-colors leading-snug">
                         {article.title}
                       </h2>
 
@@ -231,7 +231,7 @@ export default function Blog() {
                         <time dateTime={article.date} className="text-[10px] font-bold text-slate-500">
                           {formatDate(article.date)}
                         </time>
-                        <span className="text-cyan-400 font-bold text-xs uppercase tracking-wider flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <span className="text-orange-400 font-bold text-xs uppercase tracking-wider flex items-center gap-1 group-hover:gap-2 transition-all">
                           Read <ArrowRight size={12} />
                         </span>
                       </div>

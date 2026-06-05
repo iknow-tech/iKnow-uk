@@ -11,7 +11,7 @@ export default function NotFound() {
       <div className="absolute inset-0 noise-overlay opacity-25 pointer-events-none" />
 
       <div className="relative z-10 text-center px-4 sm:px-6">
-        <span className="font-display font-black text-[10rem] sm:text-[14rem] leading-none bg-gradient-to-br from-cyan-400 via-brand-500 to-violet-500 bg-clip-text text-transparent opacity-40 select-none">
+        <span className="font-display font-black text-[10rem] sm:text-[14rem] leading-none bg-gradient-to-br from-orange-400 via-brand-500 to-brand-500 bg-clip-text text-transparent opacity-40 select-none">
           404
         </span>
 

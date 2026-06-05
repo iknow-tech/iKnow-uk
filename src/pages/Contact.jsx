@@ -36,9 +36,9 @@ const contactDetails = [
 ];
 
 const socialLinks = [
-  { icon: LinkedinIcon, href: 'https://www.linkedin.com/company/iknow-technology', label: 'LinkedIn', color: 'hover:text-cyan-400' },
+  { icon: LinkedinIcon, href: 'https://www.linkedin.com/company/iknow-technology', label: 'LinkedIn', color: 'hover:text-orange-400' },
   { icon: TwitterIcon, href: 'https://twitter.com/iknowtech', label: 'Twitter / X', color: 'hover:text-brand-400' },
-  { icon: GithubIcon, href: 'https://github.com/iknow-technology', label: 'GitHub', color: 'hover:text-violet-400' },
+  { icon: GithubIcon, href: 'https://github.com/iknow-technology', label: 'GitHub', color: 'hover:text-brand-400' },
 ];
 
 const availableDays = ['Monday', 'Tuesday', 'Wednesday'];
@@ -64,7 +64,7 @@ export default function Contact() {
         <div className="absolute inset-0 grid-overlay opacity-40 pointer-events-none" />
         <div className="absolute inset-0 grid-overlay-fine opacity-20 pointer-events-none" />
         <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[400px] bg-cyan-500/10 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[400px] bg-orange-500/10 blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight">
@@ -188,7 +188,7 @@ export default function Contact() {
                     </div>
                     <h3 className="font-display font-bold text-lg text-white">Call Scheduled!</h3>
                     <p className="text-slate-400 text-xs mt-1.5 leading-relaxed">
-                      Confirmed for <span className="text-cyan-400 font-semibold">{selectedDay}</span> at <span className="text-cyan-400 font-semibold">{selectedSlot}</span>. A calendar invitation has been sent to your business email.
+                      Confirmed for <span className="text-orange-400 font-semibold">{selectedDay}</span> at <span className="text-orange-400 font-semibold">{selectedSlot}</span>. A calendar invitation has been sent to your business email.
                     </p>
                     <Button variant="ghost" size="xs" className="mt-6 text-slate-400 hover:text-white" onClick={() => { setBookingSuccess(false); setSelectedSlot(''); }}>
                       Reschedule
@@ -197,7 +197,7 @@ export default function Contact() {
                 ) : (
                   <form onSubmit={handleBookingSubmit} className="relative z-10 space-y-5">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                      <div className="p-2 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400">
                         <Calendar size={18} />
                       </div>
                       <div>
@@ -217,7 +217,7 @@ export default function Contact() {
                             onClick={() => setSelectedDay(day)}
                             className={`py-2 text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all border cursor-pointer ${
                               selectedDay === day
-                                ? 'bg-cyan-500 border-cyan-400 text-midnight font-bold'
+                                ? 'bg-orange-500 border-orange-400 text-midnight font-bold'
                                 : 'bg-dark-800/40 border-dark-800 text-slate-400 hover:text-white'
                             }`}
                           >
@@ -260,7 +260,7 @@ export default function Contact() {
                 {contactDetails.map(({ icon: Icon, title, lines }) => (
                   <div key={title} className="flex items-start gap-4">
                     <div className="w-11 h-11 rounded-xl bg-dark-800 border border-dark-700/60 flex items-center justify-center shrink-0">
-                      <Icon size={18} className="text-cyan-400" />
+                      <Icon size={18} className="text-orange-400" />
                     </div>
                     <div>
                       <h3 className="font-display font-bold text-sm text-white mb-1">{title}</h3>

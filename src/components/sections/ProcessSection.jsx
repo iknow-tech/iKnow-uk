@@ -78,22 +78,22 @@ export default function ProcessSection() {
             >
               {/* Connector line for large screens */}
               {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-[105%] w-1/3 h-0.5 bg-gradient-to-r from-cyan-500/30 to-brand-500/10 z-0 pointer-events-none" />
+                <div className="hidden lg:block absolute top-12 left-[105%] w-1/3 h-0.5 bg-gradient-to-r from-orange-500/30 to-brand-500/10 z-0 pointer-events-none" />
               )}
 
               <div className="relative z-10">
                 {/* Step index + Icon */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center font-display font-black text-sm text-cyan-400 group-hover:border-cyan-500/40 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center font-display font-black text-sm text-orange-400 group-hover:border-orange-500/40 transition-colors">
                     <step.icon size={18} />
                   </div>
-                  <span className="font-display font-black text-2xl tracking-tighter bg-gradient-to-br from-dark-500 to-dark-600 bg-clip-text text-transparent group-hover:from-cyan-400 group-hover:to-brand-400 transition-all duration-500">
+                  <span className="font-display font-black text-2xl tracking-tighter bg-gradient-to-br from-dark-500 to-dark-600 bg-clip-text text-transparent group-hover:from-orange-400 group-hover:to-brand-400 transition-all duration-500">
                     {step.num}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display font-bold text-lg text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                <h3 className="font-display font-bold text-lg text-white mb-3 group-hover:text-orange-400 transition-colors">
                   {step.title}
                 </h3>
 

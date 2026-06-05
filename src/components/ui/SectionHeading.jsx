@@ -32,11 +32,11 @@ export default function SectionHeading({
           className={cn(
             'inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.15em] uppercase',
             light
-              ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
+              ? 'bg-orange-500/10 text-orange-400 border border-orange-500/20'
               : 'bg-brand-500/10 text-brand-600 border border-brand-500/20'
           )}
         >
-          <span className={cn('w-1.5 h-1.5 rounded-full', light ? 'bg-cyan-400' : 'bg-brand-500')} />
+          <span className={cn('w-1.5 h-1.5 rounded-full', light ? 'bg-orange-400' : 'bg-brand-500')} />
           {label}
         </span>
       )}
@@ -55,7 +55,7 @@ export default function SectionHeading({
       <div
         className={cn(
           'h-0.5 mt-5 rounded-full',
-          'bg-gradient-to-r from-brand-500 via-cyan-500 to-violet-500',
+          'bg-gradient-to-r from-brand-500 via-orange-500 to-brand-500',
           align === 'center' ? 'mx-auto w-16' : align === 'right' ? 'ml-auto w-16' : 'w-16',
           'opacity-70'
         )}
