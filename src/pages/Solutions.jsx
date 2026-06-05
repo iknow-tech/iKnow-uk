@@ -1,13 +1,11 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink, Sparkles, Settings, Bot, BarChart3, Cloud, Shield, Calculator, CheckCircle } from 'lucide-react';
+import { ArrowRight, ExternalLink, Sparkles, Settings, Bot, BarChart3, Cloud, Shield } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import SectionHeading from '../components/ui/SectionHeading';
 
 /**
  * Solutions Page — Premium enterprise solution architecture page.
- * Features an interactive ROI Savings Calculator and dark glass layout.
  */
 
 const solutions = [
@@ -38,13 +36,6 @@ const additionalSolutions = [
 ];
 
 export default function Solutions() {
-  const [monthlySpend, setMonthlySpend] = useState(50000);
-  const [wastedHours, setWastedHours] = useState(25);
-
-  // Compute ROI variables
-  const yearlyEngineeringSpend = monthlySpend * 12;
-  const estimatedSavings = Math.floor(yearlyEngineeringSpend * 0.28 + wastedHours * 52 * 75);
-
   return (
     <div className="bg-midnight min-h-screen text-white">
       {/* Hero */}
@@ -112,132 +103,48 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* Interactive ROI Calculator Teaser */}
-      <section className="py-24 bg-dark-950 border-t border-b border-dark-800/60 relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Interactive Calculator"
-            title="Estimate Your Efficiency Gains"
-            subtitle="Configure your estimated operating details to project potential savings by deploying our cloud and AI services."
-            light
-          />
+      {/* Solution Next Step CTA */}
+      <section className="relative overflow-hidden border-t border-dark-800/60 bg-dark-950 py-20 lg:py-24">
+        <div className="absolute inset-0 grid-overlay opacity-25 pointer-events-none" />
 
-          <div className="mt-12 max-w-4xl mx-auto rounded-2xl glass-dark border border-dark-800/80 p-8 md:p-10 shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <span className="mb-5 block text-xs font-bold uppercase tracking-[0.24em] text-orange-400">
+                Next Step
+              </span>
+              <h2 className="max-w-3xl font-display text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+                Turn your solution roadmap into a scoped plan
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
+                Speak with our architects to shape priorities, technical constraints, and delivery options, or explore the dedicated solutions portal for deeper reference material.
+              </p>
+            </div>
 
-            <div className="grid md:grid-cols-12 gap-8 items-center relative z-10">
-              {/* Sliders Input Block */}
-              <div className="md:col-span-7 space-y-6">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-semibold text-slate-300">
-                    <span>Monthly IT / Engineering Spend</span>
-                    <span className="text-orange-400 font-mono">£{monthlySpend.toLocaleString()}</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="10000"
-                    max="500000"
-                    step="10000"
-                    value={monthlySpend}
-                    onChange={(e) => setMonthlySpend(Number(e.target.value))}
-                    className="w-full h-1.5 bg-dark-800 rounded-lg appearance-none cursor-pointer accent-orange-400"
-                  />
-                  <div className="flex justify-between text-[10px] text-slate-500 font-bold uppercase">
-                    <span>£10K</span>
-                    <span>£500K</span>
-                  </div>
-                </div>
+            <div className="flex flex-col gap-3 lg:items-end">
+              <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:justify-end">
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <Button size="lg" variant="accent" className="w-full px-8">
+                    Consult with our Architects
+                    <ArrowRight size={18} />
+                  </Button>
+                </Link>
 
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-semibold text-slate-300">
-                    <span>Manual Process Waste (Hours / Week)</span>
-                    <span className="text-orange-400 font-mono">{wastedHours} hrs</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="5"
-                    max="100"
-                    step="5"
-                    value={wastedHours}
-                    onChange={(e) => setWastedHours(Number(e.target.value))}
-                    className="w-full h-1.5 bg-dark-800 rounded-lg appearance-none cursor-pointer accent-orange-400"
-                  />
-                  <div className="flex justify-between text-[10px] text-slate-500 font-bold uppercase">
-                    <span>5 hrs</span>
-                    <span>100 hrs</span>
-                  </div>
-                </div>
+                <a
+                  href="https://iknow.solutions/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-xl border border-dark-700/80 bg-dark-900/60 px-8 py-4 font-display text-lg font-semibold text-slate-200 transition-all duration-300 hover:border-brand-400/60 hover:bg-dark-800/80 hover:text-white sm:w-auto"
+                >
+                  Visit iKnow Solutions
+                  <ExternalLink size={18} />
+                </a>
               </div>
-
-              {/* Savings Results Block */}
-              <div className="md:col-span-5 p-6 bg-dark-900/60 border border-dark-800/80 rounded-2xl text-center relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-20 h-20 bg-brand-500/10 rounded-full blur-2xl pointer-events-none" />
-                <Calculator className="mx-auto text-orange-400 mb-3" size={28} />
-                <span className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">
-                  Estimated Annual Savings
-                </span>
-                <span className="block font-display font-black text-3xl md:text-4xl text-white tracking-tight mb-2">
-                  £{estimatedSavings.toLocaleString()}
-                </span>
-                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full uppercase tracking-wider inline-flex items-center gap-1">
-                  <CheckCircle size={10} />
-                  Approx. 28% efficiency boost
-                </span>
-              </div>
+              <p className="text-xs font-medium text-slate-500">
+                External portal opens in a new window.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* External Solutions Portal Link */}
-      <section className="py-24 bg-dark-900 relative overflow-hidden">
-        <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-brand-500/5 blur-[120px] pointer-events-none" />
-
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-xs font-bold tracking-widest text-orange-400 uppercase mb-8">
-            <Sparkles size={12} />
-            Solutions Portal
-          </span>
-
-          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
-            Explore Our Comprehensive Solutions Portal
-          </h2>
-          <p className="text-slate-400 text-base sm:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-            Read granular sector deep-dives, historical client case studies, and compliance reviews inside our dedicated external portal.
-          </p>
-
-          <a
-            href="https://iknow.solutions/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-display font-bold text-base text-white bg-gradient-to-r from-orange-500 to-brand-500 hover:from-orange-400 hover:to-brand-400 shadow-xl shadow-orange-500/10 hover:shadow-orange-500/25 hover:scale-[1.02] transition-all duration-300"
-          >
-            Visit iKnow Solutions
-            <ExternalLink size={18} />
-          </a>
-
-          <p className="mt-4 text-xs text-slate-500 font-medium">
-            Opens in a new window — iknow.solutions
-          </p>
-        </div>
-      </section>
-
-      {/* Bottom Scoping CTA */}
-      <section className="py-20 bg-dark-950 border-t border-dark-800/60 relative">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="font-display font-black text-2xl md:text-3xl mb-4">
-            Need a custom solution designed?
-          </h3>
-          <p className="text-slate-400 text-sm mb-8 leading-relaxed max-w-md mx-auto">
-            Our systems consulting team will analyze your existing bottlenecks under strict NDA boundaries.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" variant="accent" className="ping-ring px-8">
-              Consult with our Architects
-              <ArrowRight size={18} />
-            </Button>
-          </Link>
         </div>
       </section>
     </div>

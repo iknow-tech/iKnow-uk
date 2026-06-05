@@ -44,8 +44,7 @@ export default function About() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-bold tracking-widest text-orange-400 uppercase">
-              <Globe size={13} className="text-orange-400" />
+            <span className="text-xs font-bold tracking-[0.24em] text-orange-400 uppercase">
               London & Staines-upon-Thames, UK
             </span>
           </div>

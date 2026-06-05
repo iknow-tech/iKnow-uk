@@ -30,13 +30,10 @@ export default function SectionHeading({
       {label && (
         <span
           className={cn(
-            'inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.15em] uppercase',
-            light
-              ? 'bg-orange-500/10 text-orange-400 border border-orange-500/20'
-              : 'bg-brand-500/10 text-brand-600 border border-brand-500/20'
+            'mb-4 block text-xs font-bold tracking-[0.22em] uppercase',
+            light ? 'text-orange-400' : 'text-brand-600'
           )}
         >
-          <span className={cn('w-1.5 h-1.5 rounded-full', light ? 'bg-orange-400' : 'bg-brand-500')} />
           {label}
         </span>
       )}

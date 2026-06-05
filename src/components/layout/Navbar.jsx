@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
-import Button from '../ui/Button';
 import Logo from '../ui/Logo';
 
 /**
  * Premium Responsive Navbar with frosted glassmorphism effect.
- * Features animated link underlines, glowing CTA, and dynamic mobile navigation.
+ * Features animated link underlines and dynamic mobile navigation.
  */
 
 const navLinks = [
@@ -75,15 +74,6 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link to="/contact">
-              <Button size="sm" variant="accent" className="ping-ring">
-                Request Demo
-              </Button>
-            </Link>
-          </div>
-
           {/* Mobile Hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -124,13 +114,6 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <div className="pt-6 border-t border-dark-800/60">
-            <Link to="/contact" className="block">
-              <Button className="w-full" size="md" variant="accent">
-                Request Demo
-              </Button>
-            </Link>
-          </div>
         </div>
       </div>
     </header>

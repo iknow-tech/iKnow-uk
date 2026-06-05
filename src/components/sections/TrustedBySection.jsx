@@ -74,8 +74,7 @@ export default function TrustedBySection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-orange-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+            <span className="block text-xs font-bold uppercase tracking-[0.24em] text-orange-400">
               Enterprise Outcomes
             </span>
             <h2 className="mt-5 font-display text-3xl font-black leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">

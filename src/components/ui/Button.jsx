@@ -1,19 +1,17 @@
 import { cn } from '../../lib/utils';
 
 /**
- * Premium Button — 4 variants, 3 sizes.
- * Primary has shimmer + magnetic feel.
- * Accent has orange glow pulse.
+ * Premium Button — restrained corporate interactions with clear hover states.
  */
 const variants = {
   primary:
-    'relative overflow-hidden bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 hover:from-brand-400 hover:to-brand-500 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700',
+    'border border-brand-500/80 bg-brand-600 text-white shadow-sm shadow-black/10 hover:border-brand-400 hover:bg-brand-500',
   secondary:
-    'border border-brand-500/50 bg-brand-500/8 text-brand-300 hover:bg-brand-500/20 hover:border-brand-400 hover:text-white backdrop-blur-sm',
+    'border border-dark-700/80 bg-dark-900/55 text-slate-200 hover:border-brand-400/70 hover:bg-dark-800/80 hover:text-white',
   ghost:
     'text-text-muted hover:text-text hover:bg-surface-100 bg-transparent',
   accent:
-    'relative overflow-hidden bg-gradient-to-r from-orange-500 to-brand-500 text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:from-orange-400 hover:to-brand-400 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:-translate-x-full hover:before:translate-x-full before:transition-transform before:duration-700',
+    'border border-orange-500/80 bg-orange-500 text-white shadow-sm shadow-black/10 hover:border-orange-400 hover:bg-orange-400',
   outline:
     'border border-border text-text hover:border-brand-400 hover:text-brand-600 bg-transparent',
   dark:
@@ -40,10 +38,9 @@ export default function Button({
     <button
       className={cn(
         'inline-flex items-center justify-center font-semibold font-display',
-        'transition-all duration-300 ease-out cursor-pointer select-none',
+        'cursor-pointer select-none',
         'focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2',
         'disabled:opacity-50 disabled:pointer-events-none',
-        'active:scale-[0.97]',
         variants[variant],
         sizes[size],
         className

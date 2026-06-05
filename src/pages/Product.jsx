@@ -10,7 +10,6 @@ import {
   MessageCircle,
   SearchCheck,
   Server,
-  Sparkles,
   TrendingUp,
 } from 'lucide-react';
 import Button from '../components/ui/Button';
@@ -190,6 +189,18 @@ const comparisonMatrix = [
   { feature: 'Enterprise security and compliance', care: true, marketing: true, intelligence: true, knowledge: true },
 ];
 
+function MatrixCell({ active }) {
+  return (
+    <td className="px-3 py-3 text-center align-middle">
+      {active ? (
+        <Check size={16} strokeWidth={2.4} className="mx-auto text-orange-400" />
+      ) : (
+        <span className="text-xs font-semibold text-slate-700">-</span>
+      )}
+    </td>
+  );
+}
+
 export default function Product() {
   const [activeTab, setActiveTab] = useState('care');
 
@@ -204,8 +215,7 @@ export default function Product() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-6 flex justify-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-4.5 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-400">
-              <Sparkles size={13} />
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-orange-400">
               AI Product Suite
             </span>
           </div>
@@ -238,7 +248,7 @@ export default function Product() {
                     <div className="w-14 h-14 rounded-2xl bg-dark-800 border border-dark-700/60 flex items-center justify-center group-hover:border-orange-500/40 transition-colors shrink-0">
                       <Icon size={26} className={iconColor} />
                     </div>
-                    <span className="rounded-full border border-dark-700/70 bg-dark-950/35 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                    <span className="pt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
                       AI Platform
                     </span>
                   </div>
@@ -345,7 +355,7 @@ export default function Product() {
 
       {/* Comparison Matrix Table */}
       <section className="py-24 bg-dark-900 relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Feature Matrix"
             title="Compare AI Product Capabilities"
@@ -353,33 +363,32 @@ export default function Product() {
             light
           />
 
-          <div className="overflow-x-auto rounded-2xl border border-dark-800 bg-dark-950/20 shadow-xl mt-12">
-            <table className="w-full min-w-[900px] border-collapse text-left">
+          <div className="mx-auto mt-10 max-w-5xl overflow-x-auto rounded-xl border border-dark-800 bg-dark-950/25 shadow-xl">
+            <table className="w-full min-w-[760px] table-fixed border-collapse text-left">
+              <colgroup>
+                <col className="w-[42%]" />
+                <col className="w-[14.5%]" />
+                <col className="w-[14.5%]" />
+                <col className="w-[14.5%]" />
+                <col className="w-[14.5%]" />
+              </colgroup>
               <thead>
-                <tr className="border-b border-dark-800 bg-dark-900/40">
-                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-slate-400">Capabilities</th>
-                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-orange-400">Customer Care</th>
-                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-brand-400">Marketing</th>
-                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-emerald-400">Business Intel</th>
-                  <th className="p-5 font-display font-bold text-xs uppercase tracking-widest text-brand-400">Knowledge AI</th>
+                <tr className="border-b border-dark-800 bg-dark-900/45">
+                  <th className="px-4 py-3 font-display text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">Capability</th>
+                  <th className="px-3 py-3 text-center font-display text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Care</th>
+                  <th className="px-3 py-3 text-center font-display text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Marketing</th>
+                  <th className="px-3 py-3 text-center font-display text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">BI</th>
+                  <th className="px-3 py-3 text-center font-display text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Knowledge</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-dark-800/60">
+              <tbody className="divide-y divide-dark-800/55">
                 {comparisonMatrix.map((row) => (
-                  <tr key={row.feature} className="hover:bg-dark-900/25 transition-colors">
-                    <td className="p-5 text-sm font-semibold text-slate-300">{row.feature}</td>
-                    <td className="p-5 text-slate-400">
-                      {row.care ? <Check size={18} className="text-orange-400" /> : <span className="text-slate-600">-</span>}
-                    </td>
-                    <td className="p-5 text-slate-400">
-                      {row.marketing ? <Check size={18} className="text-brand-400" /> : <span className="text-slate-600">-</span>}
-                    </td>
-                    <td className="p-5 text-slate-400">
-                      {row.intelligence ? <Check size={18} className="text-emerald-400" /> : <span className="text-slate-600">-</span>}
-                    </td>
-                    <td className="p-5 text-slate-400">
-                      {row.knowledge ? <Check size={18} className="text-brand-400" /> : <span className="text-slate-600">-</span>}
-                    </td>
+                  <tr key={row.feature} className="transition-colors hover:bg-dark-900/25">
+                    <td className="px-4 py-3 text-xs font-semibold leading-relaxed text-slate-300">{row.feature}</td>
+                    <MatrixCell active={row.care} />
+                    <MatrixCell active={row.marketing} />
+                    <MatrixCell active={row.intelligence} />
+                    <MatrixCell active={row.knowledge} />
                   </tr>
                 ))}
               </tbody>
@@ -401,7 +410,7 @@ export default function Product() {
             Book a product demo to map your customer care, marketing, forecasting, or knowledge management workflows to the right iKnow AI platform.
           </p>
           <Link to="/contact">
-            <Button variant="accent" size="lg" className="ping-ring px-8">
+            <Button variant="accent" size="lg" className="px-8">
               Book an AI Product Demo
               <ArrowRight size={18} />
             </Button>

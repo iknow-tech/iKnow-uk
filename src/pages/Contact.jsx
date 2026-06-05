@@ -138,7 +138,7 @@ export default function Contact() {
                         id="contact-phone"
                         label="Phone Number"
                         type="tel"
-                        placeholder="+4407539758675"
+                        placeholder="+44 7551 004972"
                         dark
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}

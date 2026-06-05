@@ -1,8 +1,8 @@
 export const companyInfo = {
   name: 'iKnow Technology Ltd',
   email: 'info@iknowtechnology.uk',
-  phone: '+4407539758675',
-  phoneHref: 'tel:+4407539758675',
+  phone: '+44 7551 004972',
+  phoneHref: 'tel:+447551004972',
   emailHref: 'mailto:info@iknowtechnology.uk',
   londonAddress: {
     label: 'London',
