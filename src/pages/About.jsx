@@ -1,11 +1,10 @@
 import { Target, Eye, Globe, Users, Award, TrendingUp } from 'lucide-react';
 import Card from '../components/ui/Card';
 import SectionHeading from '../components/ui/SectionHeading';
-import AnimatedCounter from '../components/ui/AnimatedCounter';
 
 /**
  * About Page — Corporate history, values, timeline, and team culture.
- * Redesigned with premium midnight theme, custom timeline glows, and animated counters.
+ * Redesigned with premium midnight theme and custom timeline glows.
  */
 
 const milestones = [
@@ -21,13 +20,6 @@ const values = [
   { icon: Target, title: 'Mission', description: 'To empower organisations with intelligent technology that drives measurable business outcomes and sustainable growth.' },
   { icon: Eye, title: 'Vision', description: 'To be the most trusted technology partner for enterprises navigating digital transformation — from London to the world.' },
   { icon: Award, title: 'Values', description: 'Excellence, integrity, and innovation underpin every engagement. We build partnerships, not just products.' },
-];
-
-const stats = [
-  { value: 200, suffix: '+', label: 'Enterprise Clients' },
-  { value: 30, suffix: '+', label: 'Countries Served' },
-  { value: 500, suffix: '+', label: 'Projects Delivered' },
-  { value: 99, suffix: '.9%', label: 'Client Retention' },
 ];
 
 export default function About() {
@@ -70,27 +62,6 @@ export default function About() {
                 <h3 className="font-display font-bold text-xl mb-3 text-white">{title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section with Counters */}
-      <section className="py-20 bg-dark-950 border-t border-b border-dark-800/60 relative">
-        <div className="absolute inset-0 grid-overlay opacity-20 pointer-events-none" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map(({ value, suffix, label }) => (
-              <div key={label} className="p-4 bg-dark-900/30 rounded-2xl border border-dark-800/40">
-                <div className="mb-1">
-                  <AnimatedCounter
-                    value={value}
-                    suffix={suffix}
-                    className="font-display font-black text-3xl sm:text-4xl md:text-5xl gradient-text"
-                  />
-                </div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">{label}</div>
-              </div>
             ))}
           </div>
         </div>
